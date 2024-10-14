@@ -1,0 +1,11 @@
+// Shortcode for the search bar
+function search_bar_shortcode( $atts ) {
+    ob_start(); // Start output buffering
+    ?>
+    <div class="search_container">
+        <?php get_search_form(); ?>
+    </div>
+    <?php
+    return ob_get_clean(); // Return the output buffer
+}
+add_shortcode( 'search-bar', 'search_bar_shortcode' );
